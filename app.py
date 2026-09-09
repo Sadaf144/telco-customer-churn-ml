@@ -5,12 +5,17 @@ import pickle
 
 st.set_page_config(page_title="Customer Churn Intelligence Platform", page_icon="📊", layout="wide")
 
+import os
+
 @st.cache_resource
 def load_artifacts():
-    with open('churn_model.pkl', 'rb') as f:
+    # File ka absolute path find karna
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(BASE_DIR, 'churn_model.pkl')
+    
+    with open(model_path, 'rb') as f:
         artifacts = pickle.load(f)
     return artifacts['model'], artifacts['scaler'], artifacts['label_encoders']
-
 model, scaler, label_encoders = load_artifacts()
 
 st.title("📊 Customer Churn Intelligence Platform")
