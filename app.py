@@ -56,14 +56,13 @@ header_col1, header_col2 = st.columns([2, 1])
 
 with header_col1:
     st.title("⚡ Enterprise Customer Churn Platform")
-    st.markdown("### AI-Powered Predictive Analytics & Retention Automation")
-    st.caption("Identify churn risks early, analyze customer sentiment patterns, and export bulk enterprise data reports in real time.")
-
-with header_col2:
-    # High quality banner image from Unsplash
+   with header_col2:
+    # Updated parameter: use_container_width=True
     st.image(
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
         caption="Predictive Analytics Dashboard",
+        use_container_width=True
+    )
         use_column_width=True
     )
 
