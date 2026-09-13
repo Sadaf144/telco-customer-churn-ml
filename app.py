@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -29,11 +28,6 @@ st.markdown("""
         border: 1px solid #e9ecef;
         text-align: center;
     }
-    .banner-img {
-        border-radius: 12px;
-        margin-bottom: 25px;
-        object-fit: cover;
-    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -51,19 +45,19 @@ except Exception as e:
     st.error(f"Error loading model files: {e}")
     st.stop()
 
-# Header Layout with Image
+# Header Layout with Banner Image
 header_col1, header_col2 = st.columns([2, 1])
 
 with header_col1:
     st.title("⚡ Enterprise Customer Churn Platform")
-   with header_col2:
-    # Updated parameter: use_container_width=True
+    st.markdown("### AI-Powered Predictive Analytics & Retention Automation")
+    st.caption("Identify churn risks early, analyze customer sentiment patterns, and export bulk enterprise data reports in real time.")
+
+with header_col2:
     st.image(
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
         caption="Predictive Analytics Dashboard",
         use_container_width=True
-    )
-        use_column_width=True
     )
 
 st.markdown("---")
